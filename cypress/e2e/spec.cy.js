@@ -66,3 +66,19 @@ describe('Chart data is maintained across pages', () => {
     cy.get('.y-value-input').should('have.value', '1') 
   })
 })
+
+describe('Saving a chart to the gallery', () => {
+  it('chart is successfully saved to the gallery', () => {
+    cy.visit('/')
+    cy.findByText("Line").click()
+    cy.findByText("Chart title").type("test")
+    cy.findByText("X label").type("test x")
+    cy.findByText("Y label").type("test y")
+    cy.findByText("X").type("1")
+    cy.findByText("Y").type("1")
+    cy.findByText("Generate chart").click()
+    cy.findByText("Save chart").click()
+    cy.findByText("Gallery").click()
+    cy.get('.chart-title').should('contain', 'test')
+  })
+})
