@@ -38,3 +38,10 @@ test("Push two saved charts and then load all of them", function () {
     expect(savedCharts).toStrictEqual([[{"x": 6, "y": 2}, {"x": 8, "y": 2}, {"x": 9, "y": 4}],
         [{"x": 1, "y": 2}, {"x": 2, "y": 3}, {"x": 3, "y": 5}]])
 })
+
+test("Update and load current data", function() {
+    const chart = [{"x": 6, "y": 2}, {"x": 8, "y": 2}, {"x": 9, "y": 4}]
+    chartStorage.updateCurrentChartData(chart)
+    const currentData = chartStorage.loadCurrentChartData()
+    expect(currentData).toStrictEqual([{"x": 6, "y": 2}, {"x": 8, "y": 2}, {"x": 9, "y": 4}])
+})
