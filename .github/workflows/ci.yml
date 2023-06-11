@@ -1,9 +1,12 @@
 name: build and test CI
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call: 
+    inputs: 
+      upload-pages-artifact:
+        type: boolean 
+        required: false 
+ 
 
 jobs:
   build-and-test-ci:
@@ -15,8 +18,8 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: npm run build
-      - run: npm run cy:open
       - run: npm run test:integration 
+      - run: npm run test:e2e 
       - uses: actions/upload-artifact@v3
         with:
           name: e2e-video
