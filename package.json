@@ -6,7 +6,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "test:integration": "jest",
-    "start": "serve src -p 8080",
+    "start": "webpack serve --open",
     "test": "npm-run-all test:*",
     "build": "webpack",
     "test:e2e": "start-test start http://localhost:8080 cy:run"
