@@ -17,6 +17,7 @@
     "cypress": "^12.13.0",
     "html-webpack-plugin": "^5.5.1",
     "jest-environment-jsdom": "^29.5.0",
+    "msw": "^1.2.2",
     "style-loader": "^3.3.3",
     "webpack": "^5.85.1",
     "webpack-cli": "^5.1.1",
