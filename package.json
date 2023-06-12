@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "CS 362 Final Project",
   "scripts": {
+    "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test:integration": "jest",
+    "test:integration": "npm-run-all test:*",
     "start": "serve src -p 8080",
-    "test": "npm-run-all test:*",
+    "test": "jest",
     "test:e2e": "start-test start http://localhost:8080 cy:run"
   },
   "devDependencies": {
