@@ -9,8 +9,7 @@
     "test:integration": "jest",
     "start": "serve src -p 8080",
     "test": "npm-run-all test:*",
-    "test:e2e": "start http://localhost:8080/ cy:run"
-
+    "test:e2e": "serve src 8080 -p & cypress run --browser chrome --headed"
   },
   "devDependencies": {
     "@testing-library/cypress": "^9.0.0",
@@ -23,6 +22,7 @@
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "jsdom": "^22.1.0",
+    "serve": "^14.2.0",
     "style-loader": "^3.3.3",
     "webpack": "^5.85.1",
     "webpack-cli": "^5.1.1",
