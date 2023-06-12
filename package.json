@@ -8,6 +8,7 @@
     "test:integration": "npm-run-all test:*",
     "start": "serve src -p 8080",
     "test": "jest",
+    "build": "webpack",
     "test:e2e": "start-test start http://localhost:8080 cy:run"
   },
   "devDependencies": {
