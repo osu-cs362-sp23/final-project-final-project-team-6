@@ -4,9 +4,9 @@
   "description": "CS 362 Final Project",
   "scripts": {
     "cy:run": "cypress run",
-    "test:integration": "npm-run-all test:*",
+    "test:integration": "jest",
     "start": "serve src -p 8080",
-    "test": "jest",
+    "test": "npm-run-all test:*",
     "test:e2e": "start-test start http://localhost:8080 cy:run",
     "build": "webpack",
     "cy:open": "cypress open"
